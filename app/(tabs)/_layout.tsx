@@ -24,6 +24,15 @@ const LayoutForTabs = () => {
                         <FontAwesome size={28} name='user-cog' color={color} />,
                 }}
             />
+            <Tabs.Screen
+                name='tab3'
+                options={{
+                    title: 'Tab3',
+                    headerShown: false,
+                    tabBarIcon: ({ color }) =>
+                        <FontAwesome size={28} name='cat' color={color} />,
+                }}
+            />
         </Tabs>
     );
 };

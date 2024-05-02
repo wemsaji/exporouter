@@ -10,9 +10,7 @@ const LinkButton = ({
     return (<View style={styles.container}>
         <Link style={styles.link} href={{ pathname }}>
             <FontAwesome size={18} name='link' color='white' />
-            &nbsp;&nbsp;Link to [&nbsp;
-            {(pathname as string) === '' ? '/' : pathname}
-            &nbsp;]
+            &nbsp;&nbsp;Link to [&nbsp;{pathname}&nbsp;]
         </Link>
     </View>);
 };

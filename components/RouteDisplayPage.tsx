@@ -1,19 +1,19 @@
 import { AllRoutes, usePathname } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 import LinkButton from './LinkButton';
+import { getOtherRouteLinks } from '@/helpers/RouteHelper';
 
 const RouteDisplayPage = ({
     componentName,
-    links,
 }: {
     componentName?: string;
-    links?: AllRoutes[];
 }) => {
     console.log(Date.now(), componentName);
-    const pathName = usePathname();
+    const currentPath = usePathname();
+    const links: AllRoutes[] = getOtherRouteLinks(currentPath);
     return <View style={styles.container}>
         {componentName && <Text>{componentName}</Text>}
-        <Text>{pathName}</Text>
+        <Text>{currentPath}</Text>
         {links && links.map(link => <LinkButton key={link as string} pathname={link} />)}
     </View>;
 };
