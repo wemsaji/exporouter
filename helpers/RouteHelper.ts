@@ -1,5 +1,3 @@
-import { AllRoutes } from 'expo-router';
-
 export const RouteByComponentName: { [key: string]: string } = {
     PageForTab1Stack1: '/',
     PageForTab1Stack2: '/stack2',
@@ -9,6 +7,5 @@ export const RouteByComponentName: { [key: string]: string } = {
 } as const;
 
 export const getOtherRouteLinks = (currentPath: string)
-    : AllRoutes[] => Object.values(RouteByComponentName)
-        .filter(r => r !== currentPath)
-        .map(r => r as AllRoutes);
+    : string[] => Object.values(RouteByComponentName)
+        .filter(r => r !== currentPath);
